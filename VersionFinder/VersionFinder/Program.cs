@@ -12,7 +12,7 @@ namespace VersionFinder
     {
         static void Main(string[] args)
         {
-            Regex regex = new Regex(@"``` yaml[\s\S]*tag: ([\s\S]+?)```", RegexOptions.Compiled);
+            Regex regex = new Regex(@"openapi-type:[\s\S]+?tag: ([\s\S]+?)```[\s\S]+?### Tag", RegexOptions.Compiled);
 
             using (StreamWriter file = new StreamWriter(@"D:/AzureVersioning.txt"))
             {
